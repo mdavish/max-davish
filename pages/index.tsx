@@ -54,9 +54,8 @@ const Home: NextPage = () => {
           <Link
             target="__blank"
             href="/cv"
-            className="my-auto font-extrabold text-xl text-gray-600 hover:text-black visited:text-gray-600 no-underline transition-all delay-100"
           >
-            <span className="hover:mb-1">
+            <span className="hover:cursor-pointer my-auto font-extrabold text-xl text-gray-600 hover:text-black visited:text-gray-600 no-underline transition-all delay-100">
               CV
             </span>
           </Link>
