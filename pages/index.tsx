@@ -3,6 +3,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Layout from "../components/Layout"
 import { BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs"
+import Link from "next/link"
 
 const Home: NextPage = () => {
   return (
@@ -50,7 +51,7 @@ const Home: NextPage = () => {
           >
             <BsLinkedin className="text-3xl text-gray-600 hover:text-black transition-all delay-100 hover:mb-1" />
           </a>
-          <a
+          <Link
             target="__blank"
             href="/cv"
             className="my-auto font-extrabold text-xl text-gray-600 hover:text-black visited:text-gray-600 no-underline transition-all delay-100"
@@ -58,7 +59,7 @@ const Home: NextPage = () => {
             <span className="hover:mb-1">
               CV
             </span>
-          </a>
+          </Link>
         </div>
       </Layout >
     </div >
