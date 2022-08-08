@@ -17,7 +17,7 @@ export default function CVPage(props: InferGetStaticPropsType<typeof getStaticPr
       </Head>
       <Layout>
         <ReactMarkdown
-          className="prose prose-gray prose-h1:text-5xl prose-h1:font-bold pb-40">
+          className="prose prose-gray prose-h1:text-5xl prose-h1:font-bold pb-40 print:pb-0">
           {props.cvMarkdown}
         </ReactMarkdown>
       </Layout>
