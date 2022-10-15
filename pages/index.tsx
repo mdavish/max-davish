@@ -1,11 +1,13 @@
-import type { NextPage } from "next"
+import { NextPage, GetStaticProps } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Layout from "../components/Layout"
 import { BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs"
 import Link from "next/link"
+import { BlogPost, getBlogPosts } from "../utils/files"
+import BlogPreview from "../components/BlogPreview"
 
-const Home: NextPage = () => {
+const Home: NextPage<{ posts: BlogPost[] }> = ({ posts }) => {
   return (
     <div>
       <Head>
@@ -60,9 +62,26 @@ const Home: NextPage = () => {
             </span>
           </Link>
         </div>
+        <div className="mt-8 flex flex-col gap-y-4">
+          <h3 className="text-3xl font-bold">Blog</h3>
+          {
+            posts.map((post) => (
+              <BlogPreview key={post.slug} post={post} />
+            ))
+          }
+        </div>
       </Layout >
     </div >
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = getBlogPosts();
+  return {
+    props: {
+      posts
+    }
+  }
 }
 
 export default Home

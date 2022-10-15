@@ -1,0 +1,223 @@
+---
+title: My Philosophy of Open Building
+date: 2022-10-10
+description: A short essay on my philosophy of open building.
+---
+
+In my experience building B2B software, I've repeatedly observed that a
+philosophy of **open building** tends to create the highest quality, most useful
+software. An "open building" approach involves building _all_ software as if it
+were top quality, customer-facing software.
+
+Traditionally, when companies build software, they build it very differently
+depending on whom it's for, and there are basically three constituents you might
+be building for:
+
+1. **Customers:** People who are paying money for your software and keeping your
+   business alive. Customers are the most important constituent and generally we
+   direct most of our effort toward building for them. However, in B2B SaaS, the
+   customers who actually use the software are sometimes a captive audience.
+   Sometimes they have no choice but to use your software because their company
+   may be locked into a long contract with you. As a result, quality and
+   usability sometimes suffer. But in general, customer-facing software is held
+   to the highest standard.
+2. **Prospects:** People who are considering buying your software. For
+   prospects, the goal is usually to get them into some kind of demand-gen flow
+   and get them talking to a salesperson as soon as possible. As a result,
+   software built for prospects often optimizes for appearance and engagement by
+   (i.e. flashy landing pages).
+3. **Employees:** People who work at your company. Employees naturally need
+   software do to their jobs. Often these employees are engineers who rely on
+   microservices built by other engineers. Though they could also be other types
+   of employees - salespeople, marketers, business analysts - who are seeking
+   information or tooling to do their job. In this category, usability often
+   suffers greatly. If customers aren't going to be using the software, why
+   should we invest in making it sleek and intuitive?
+
+Most companies treat these three user personas very differently when building
+software. But a **philosophy of open building** demands that they all be treated
+essentially the same, because the lines between them are actually surprisingly
+blurry, and treating them all as equal and deserving top quality software
+actually yields better outcomes for everyone.
+
+To make things more specific, my philosophy of openly building software has four
+main tenants:
+
+1. Internal platforms should be built to the standards of consumer products.
+2. Whenever possible, internal microservices should be made into public APIs.
+3. Everything should be documented publicly.
+4. Products should be free to try out.
+
+Let's go through each to understand why it's important.
+
+## Internal Platforms
+
+Every software company has internal platform teams whose primary customers are
+other engineers at the company. A few classic examples of such teams are...
+
+- A UI team that manages a UI component library for other teams to use
+- An SRE team that manages CI/CD pipelines
+- An infrastructure team that manages things like Kubernetes clusters,
+  Terraform, etc.
+- A data engineering team that manages a data warehouse for other teams to use
+- An ML Ops team that manages the trainining and deployment of ML models
+
+These teams play a critical role in the success of the company. While they don't
+deliver software _directly_ to customers, they control the speed, consistency,
+and reliability with which the rest of the company can deliver software.
+
+In my experience, the software that these teams deliver tends to be held to a
+lower standard of usability than software that is delivered directly to
+customers. These teams tend to think less about things like developer
+experience, API design, and documentation than teams who are delivering software
+directly to customers. After all, these teams are building software for their
+colleagues, so it's doesn't matter if it's a bit clunky. It's not like a
+customer is going to complain about it and cancel their subscription.
+
+I think this is a mistake. I think that internal platforms must be held to the
+same standards that external products are. There are two reasons. The first
+reason is that almost nothing is more important than making your own employees
+efficient. The cost of forcing your employees to use clunky software is every
+bit as great as the cost of forcing your customers to use clunky software.
+
+By slowing your employees down and forcing them to use unintuitive APIs or
+unreliable services, you are wasting the most valuable resource your company
+has: time. One of the most important determinants of success in the software
+business is speed - can you ship features faster than your competitors and fast
+enough to keep up with your customers' rising expectations?
+
+Every moment your engineers spend dealing with a slow CI/CD pipeline, or writing
+their own UI components from scratch, or waiting for a data warehouse query to
+run, is a moment they are not spending doing work that actaully adds value. As a
+leader, this should terrify you every bit as much as bad customer-facing
+software.
+
+The second, less obvious reason for holding internal platforms to a high
+standard is that many of them can ultimately become new sources of revenue. The
+most classic example of this happening is Amazon Web Services. AWS began as an
+_internal_ platform meant to save Amazon's own engineers time on tedious,
+"undifferentiated heavvy-lifting" like provisioning databases, servers,
+messaging queues and the like. But it wasn't long before Amazon realized that,
+if they had these problems, every other company building software probably did
+too. Led by now-CEO Andy Jassy, Amazon made AWS into a public product, and the
+rest is history. Today, AWS is a $100 billion business.
+
+At Yext, where I currently work, we recently underwent a similar process with
+our [Pages product](https://www.yext.com/platform/pages), which is used to build
+SEO-optimized websites for thousands of businesses. Pages was once a
+walled-garden, internal platform that only Yext employees could use to build
+websites. But increasingly we realized that many of our customers wanted to use
+this technology to build websites on their own, or with the help of a
+third-party agency. So we opened up our platform and made it into a public
+product.
+
+In the process, we not only unlocked a new revenue stream but also dramatically
+improved the quality of the product, because we were forced to now hold it to
+the standards of an external, customer-facing platform. This meant creating a
+more intuitive developer experience, better documentation, and a more
+interoperable system built on Vite and React. This dramatically improved
+developer experience also made our _own_ team dramatically more productive.
+
+## Make Private Microservices Public APIs
+
+A second, closley related principle is that you should strive to make all
+internal microservices into public APIs. "Internal microservices" is a broad
+term that I'll use to refer to any piece of software that communicates with
+other internal software and/or employees but not with the outside world. This
+includes RPCs that interface with each other as well as admin portals where
+internal employees can perform priveleged actions that ordinary customers can't.
+
+In a B2B setting, you should be wary of these internal microservices. You should
+question always ask yourself, "Should we just make this public?". For example,
+if you've written a microservice that fetches the data and displays it on a
+table in an admin portal, why not just make it a public API that returns JSON?
+Then you can use that same API to power your admin portal, but you can also use
+it to power a public-facing dashboard that your customers can use to see the
+same data.
+
+In my experience, this type of programmability and interoperability is crucial
+for large enterprise customers. Big enterprises almost always want to do things
+programatically, often with complex business logic. If you require them to
+manually click around in your platform or manually import and export data, you
+will hamper their ability to do their jobs. A good litmus test here is that you
+everything you can do by clicking around in your platform should _also_ be
+doable programatically, via API.
+
+Furthermore, making internal microservices into APIs again forces you to hold
+your API design to a higher standard. It forces you to think more about the
+developer experience for the person using your API. Even if it turns out that
+customers don't use an API and only your own employees do, you've still saved
+yourself a lot of time and effort by making it easy for your own employees to
+use.
+
+## Document Everything Publicly
+
+The third tenant of my open building philosophy is that (virtually) everything
+about your software should be publicy documented. Public documentation should
+include...
+
+- Public, transparent pricing
+- A public changelog for your product
+- Thorough documentation and guides for all public APIs and SDKs
+- A public roadmap for your product
+- Transparency into security practices, SOC2, etc.
+- A public, open forum for questions and support
+- Transparency into your company's technology stack and engineering practices
+- Special documentation outlining the behavior of any machine learning systems,
+  with a special focus on governance and ethics
+
+In fact, there are very few things that should _not_ be documented publicly.
+Public should be the default position for all documentation, and documentation
+should only be private if there's a good reason. "Competitive advantage" is
+usually _not_ a good reason to keep things private, especially when it comes to
+high-tech ML products in a B2B setting. Allowing your customers to understand
+and have confidence in your product is much more important than keeping your
+intellectual property a secret.
+
+Furthermore, you should strongly consider maintaining both your public and
+private documentation in the same system. If some documentation about internal
+microservices or company practices needs to be kept private, consider simply
+simply adding an `isPrivate` flag somewhere in your documentation system that
+hides it from external users but exposes it to internal employees.
+
+A single source of documentation is dramatically easier to maintain than
+separate systems for public and private documentation, and it has the benefit of
+making your own employees' lives easier, since they will no longer need to
+search between several different systems to find what they're looking for and
+can instead use the same, high-quality documentation portal that your customers
+use.
+
+The other key benefit of documenting everything publicly is that it forces us to
+hold documentation to a higher standard. If customers might read it, we tend to
+make the documentation more polished and thorough.
+
+Even more than that, writing public documentation forces us to scrutinize our
+ideas and systems more deeply. If something sounds stupid when you write it
+down, and if you'd be embarrassed to have a customer read it, then you should
+probably think twice about whether it's a good idea in the first place.
+
+## Make Everything Free to Try
+
+Finally, I believe that all software should be free to try out. This means that
+anyone should be able to sign up (ideally using Github or Google) and start
+trying out your product without speaking to a salesperson. Ideally, your product
+should also come with some amount of free usage, so that a new user can
+accomplish something meaningful with it before they spend any money. This is a
+key tenant of product-led growth - the idea that customers want to actually use
+your product before they ink a deal with you.
+
+The most obvious benefit of making your product free to try is that it generates
+demand. Allowing prospects to actually use - and hopefully love - your product
+is 1,000x better than any landing page or whitepaper at generating
+top-of-the-funnel demand for your product. In the past decade, companies like
+Slack and Github have had enormous success with this bottoms-up growth model.
+Users have adopted free versions of these products, loved them, and eventually
+convinced their companies' IT departments to buy them.
+
+But a subtler, equally important benefit of making your product free to try is
+that it forces you to think much more about your product's usability,
+information architecture, and overall quality. If you know that your customers
+are going to thoroughly vet your product before they sign a big deal with you,
+then you are forced to hold your product to a much higher standard. The product
+needs to be intuitive, fast to get started with, and utterly bug-free. Anything
+less and you could lose the deal.
