@@ -53,14 +53,14 @@ const Home: NextPage<{ posts: BlogPost[] }> = ({ posts }) => {
           >
             <BsLinkedin className="text-3xl text-gray-600 hover:text-black transition-all delay-100 hover:mb-1" />
           </a>
-          <Link
+          {/* <Link
             target="__blank"
             href="/cv"
           >
             <span className="hover:cursor-pointer my-auto font-extrabold text-xl text-gray-600 hover:text-black visited:text-gray-600 no-underline transition-all delay-100">
               CV
             </span>
-          </Link>
+          </Link> */}
         </div>
         <div className="mt-8 flex flex-col gap-y-4">
           <h3 className="text-3xl font-bold">Blog</h3>
