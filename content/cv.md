@@ -2,15 +2,13 @@
 
 ## About
 
-I'm Max. I'm currently a product manager at [Yext](https://www.yext.com/), where
-I lead our [Search](https://www.yext.com/platform/search) product. Yext Search
-(previously "Yext Answers") is an enterprise search platform that allows any
-company to build powerful search engines using the same technology that Google
-uses.
-
-I'm passionate about software and I love what I do. I want to devote my life and
-career to using software to make the world work better. I think bits, bytes, and
-numbers can solve almost any problem.
+I'm Max. I'm a senior product manager at [Yext](https://www.yext.com/), where I
+lead our [Chat](https://www.yext.com/chat-beta),
+[Search](https://www.yext.com/platform/search) and
+[Analytics](https://www.yext.com/platform/analytics) products. I'm focused on
+building products that make it easy for average companies to build amazing
+digital experiences using the same data and machine learning tools that tech
+giants like Google and Amazon use.
 
 Reach me at [davish9@gmail.com](mailto:davish9@gmail.com) or learn more on my
 [personal website](/).
@@ -19,24 +17,49 @@ Reach me at [davish9@gmail.com](mailto:davish9@gmail.com) or learn more on my
 
 ## Experience
 
-### Product Manager @ Yext
+### Senior Product Manager @ Yext
 
 _November 2022 - Present_
 
-As the lead product manager for
-[Yext Search](https://hitchhikers.yext.com/products/search), I'm responsible for
-the development of all new features and technology, competitive positioning, and
-go-to-market strategy.
+Currently I lead the Chat, Search, and Analytics products at Yext. Yext Chat is
+a new conversational AI platform that makes it easy for any business to build
+conversational agents powered by large language models.
 
-Responsibilities and achievements include:
+Yext Search is an enterprise search platform that makes it easy for any company
+to build search for their website, e-commerce storefront, or support portal.
+Yext Analytics is our platform for collecting data on how users are interacting
+with Yext-powered properties, such as your search experience, website, or
+third-party publishers like Google Maps.
+
+My responsibilities include:
+
+- Lead a team of three associate product managers
+- Directly manage a team of four engineers building Yext Chat
+- Manage roadmap and backlog for five other engineering teams
+- Work with executive leadership to establish long term company strategy
+- Work with design and engineering to prototype and build new Yext products
+- Work with key customers and partners to architect new solutions and win new
+  business
+- Work with developer relations and marketing to evangelize Yext products
+
+### Product Manager @ Yext
+
+_November 2021 - November 2022_
+
+As the lead product manager for
+[Yext Search](https://hitchhikers.yext.com/products/search), I was responsible
+for the development of all new features and technology, competitive positioning,
+and go-to-market strategy.
+
+Responsibilities and achievements included:
 
 - Grew product revenue from $0 to >$20M since launch in 2020
 - Grew customer base from 0 to 120+ customers since launch in 2020
-- Lead a team of a three associate product managers
-- Manage roadmap and backlog for four engineering teams, 30+ engineers
-- Lead R&D efforts for all search technology - special focus on AI and deep
+- Led a team of a two associate product managers
+- Managed roadmap and backlog for four engineering teams, 30+ engineers
+- Led R&D efforts for all search technology - special focus on AI and deep
   learning
-- Lead development and developer evangelism for Yext Search's
+- Led development and developer evangelism for Yext Search's
   [open-source tools](https://hitchhikers.yext.com/docs/search/)
 - Work closely in pre- and post-sale with key customers including Samsung, World
   Health Organization, UNC Health, Cedars Sinai Hospital, Chic-fil-a, VMWare,
@@ -44,7 +67,7 @@ Responsibilities and achievements include:
 
 ### Associate Product Manager @ Yext
 
-_July 2020 - November 2022_
+_July 2020 - November 2021_
 
 Before I led Yext Search team, I worked as an APM on the team under
 [Max Shaw](https://www.linkedin.com/in/max-shaw-82287025/), who now leads all

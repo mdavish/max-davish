@@ -1,0 +1,477 @@
+---
+title: The Four Essential AI Use Cases
+date: 2023-03-13
+description: A framework for understanding how to use AI in your business.
+---
+
+Six years ago, I stumbled upon Grant Sanderson’s YouTube video,
+_[What is a Neural Network?](https://www.youtube.com/watch?v=aircAruvnKk)_. At
+the time I was working as a consultant helping banks use statistics to catch
+financial crime. I knew a little bit about machine learning and I had heard that
+deep neural networks were the next big thing, so I turned to Sanderson’s YouTube
+channel, [3Blue1Brown](https://www.youtube.com/@3blue1brown), to educate myself
+on the subject.
+
+What I learned from that YouTube video - and the hundreds of others I watched
+afterward - changed the course of my life and career. I became obsessed with
+deep learning and decided to devote my career to it and, in particular, to
+finding real, practical applications for it. I started applying for jobs in tech
+and eventually found my way to Yext, where I’ve been fortunate to do some
+incredible work on AI products like
+[Yext Search](https://www.yext.com/platform/search) and now
+[Yext Chat](https://www.yext.com/chat-beta).
+
+I was floored by the power of the idea in Sanderson’s video: an algorithm that
+mimicked the human brain and could _learn_ to perform arbitrary tasks. The video
+explained deep learning in the context of the famous MNIST example, in which a
+tiny neural network learns to identify hand-written digits. But it was clear to
+me that this same algorithm could fundamentally learn _anything_. There was no
+obvious limit to what it could do.
+
+![Alt Text](https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png)
+
+This was in 2017, and at the time deep learning was starting to pick up steam.
+The previous year, the New York Times published a piece on
+_[The Great AI Awakening](https://www.nytimes.com/2016/12/14/magazine/the-great-ai-awakening.html)_
+describing how although neural networks had existed for decades, they had never
+quite found widespread commercial use, until now. Suddenly, they were beginning
+to solve challenges previously thought to be unsolvable. Later that year Google
+published the now famous
+_[Attention is All You Need](https://arxiv.org/abs/1706.03762)_ paper, which
+introduced the revolutionary transformer architecture.
+
+But if you had told me in 2017 all the progress we’d make by 2023, even I would
+have been astonished. It’s exceeded even my wildest expectations, and if the
+next six years are anything like the past six have been, we are going to be
+living in a very different world by 2030.
+
+So what’s changed? What can we do in 2023 that we couldn’t in 2017? There have
+been many advancements, including improvements in GPU hardware, the introduction
+of powerful pre-trained transformer models like BERT, a cambrian explosion of
+the AI open source community on [HuggingFace](https://huggingface.co/), and new
+breakthroughs in biology like
+[AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold).
+But the most important advancement of all - and the reason that you’re reading
+daily about AI in the press - has been the rise of **generative AI**, and
+especially **large language models **like GPT-3 and ChatGPT.
+
+“Generative AI” refers simply to AI models that generate things, like text or
+images. Generative AI is not new. Generative adversarial networks - a
+predecessor to image generation models like Midjourney and Stable Diffusion -
+were invented by Ian Goodfellow in 2014. And autoregressive language models like
+GPT-1 and GPT-2 have been around for even longer than that.
+
+What’s new is the _scale_ of these models, as well as their training procedure.
+What makes GPT-3 so much more capable than any of its predecessors is that it is
+much _larger_ - an order of magnitude larger than even BERT, which was at the
+time considered a very large model. And what made Chat GPT and GPT-3.5 even
+better than the original GPT-3 were improvements to its fine-tuning,
+specifically a process called
+**[reinforcement learning from human feedback](https://openai.com/research/learning-from-human-preferences)**
+(RLHF), in which the model learns to conform to human preferences.
+
+Increasing the size of these models has made them far more intelligent and
+flexible, but perhaps most importantly it’s largely obviated the need for large
+training datasets. Acquiring training data has historically been the hardest
+part of machine learning, and the most prohibitive for many companies.
+
+For example, if you needed a model to determine a user’s intent when speaking to
+a chat bot, in 2017 you would have had to train a model on tens of thousands of
+example messages, which means that you would have to _label_ tens of thousands
+of messages, which is time-consuming and expensive.
+
+But in 2023, you can simply “prompt” GPT-3 on the task at hand, describing it as
+you would to another human, and GPT-3 will simply perform the task based on your
+instructions. This is called **zero-shot learning** and it massively lowers the
+barrier to using AI.
+
+The ability to simply prompt rather than train, along with huge upgrades in
+intelligence and coherence, makes LLMs a game changer for businesses and
+consumers. It makes possible things that would have been considered science
+fiction only a few years ago. It allows us to automate new types of work and
+create new types of digital experiences for our customers. I believe this has
+the potential to create enormous value for the economy and, more importantly,
+genuinely improve peoples’ lives.
+
+But for that to happen, we all need to understand AI - what its strengths and
+limitations are, how to use it responsibly and effectively. As a practitioner
+and optimist about AI, my goal in this essay is to help other business leaders
+to wrap their heads around this technology, understand how it’s going to affect
+their organization, and make sound decisions about it.
+
+# Four Use Cases
+
+Rather than talk about AI in the abstract, we’ll discuss what I consider the
+four main use cases for AI in 2023. I recognize that talking about use cases for
+AI in 2023 is a bit like talking about use cases for the computer in 1970. If,
+in 1970, you had tried to explain the potential use cases for computers, you
+might have come up with such examples as performing mathematical calculations on
+large data sets, or setting up a database for a company’s inventory.
+
+But of course that would have sold computers far short. We use computers for
+much more than just doing math or keeping track of inventory. Computers suffuse
+every aspect of our lives, and today we use them for many things that in 1970
+would have been completely unimaginable. I think that AI represents a platform
+shift as significant as personal computing, mobile computing, or the internet,
+and that it will come to suffuse every aspect of our businesses and lives just
+as those technologies did.
+
+So identifying concrete use cases feels a little silly, and I also recognize
+that there is considerable overlap between the four use cases I discuss. But
+still, I think it’s the right place to start, because many organizations are
+struggling to understand where this technology fits in and what it can be used
+for. Furthermore, separating out different use cases allows us to make better
+decisions about risk, because depending on the use case the risks are very
+different.
+
+For each use case, we’ll outline example applications, the specific technologies
+and algorithms it relies on, how human involvement works, and what’s different\_
+\_now that we have generative AI.
+
+## AI as a Creative Assistant
+
+The first use case is using AI as a creative assistant. In this case, AI is
+helping a high-level creative employee by providing suggestions, retrieving
+information, and supporting output. I’m intimately familiar with this use case
+because I use it almost every day in the form of
+[GitHub Copilot](https://github.com/features/copilot) and ChatGPT.
+
+Copilot and ChatGPT help me write code, which is part of my job as a product
+manager. Copilot helps autocomplete my code or write code based on my prompted
+instructions. And I use ChatGPT as a sort of replacement for StackOverflow,
+asking it to help me debug things and think through novel problems.
+
+It’s hard to overstate how much more productive these two products have made me
+over last year. Especially when I’m working in unfamiliar territory - e.g. in a
+programming language I don’t have much experience with - Copilot helps me
+quickly translate the ideas in my head into working computer code. ChatGPT helps
+me debug issues and understand new concepts much more quickly than reading
+documentation.
+
+Copilot is a special creative assistant for software engineers, but in the
+future every industry and application will have some form of creative assistant
+embedded into it. There are already a number of other AI assistant products
+emerging for other industries such as [Jasper](https://www.jasper.ai/) and
+[Copy AI](https://www.copy.ai/) for copywriting, or [UIZard](https://uizard.io/)
+and [Galileo](https://www.usegalileo.ai/) for UI design. Additionally, many
+software products like [Notion](https://www.notion.so/product/ai) and Microsoft
+Office are beginning to embed AI assistants directly into their products.
+
+I anticipate that this year we’ll see the emergence of other industry-specific
+creative assistants for fields like law, medicine, entertainment, advertising,
+academia, and finance. Here are some specific examples:
+
+- Legal creative assistants will help lawyers write briefs and contracts by
+  quickly surfacing and summarizing relevant cases. Often the assistant will
+  write the first draft and the lawyers will tweak as needed.
+- Medical creative assistants will help doctors to diagnose patients based on a
+  written set of symptoms, or to write correspondence to insurance companies
+  like [this guy](https://twitter.com/StuartBlitz/status/1602834224284897282)
+  already is doing.
+- In entertainment, creative assistants will help screenwriters generate new
+  ideas for TV episodes and even write the first drafts of the dialogue.
+- Advertising creative assistants will help write first drafts of commercials or
+  other ad copy based on a prompt. They’ll also be able to create visuals or
+  even entire videos.
+- Academic creative assistants will help professors write papers by surfacing
+  and summarizing relevant academic literature.
+- Financial creative assistants will help bankers fill out complicated Excel
+  formulas in their models and summarize relevant market data.
+
+These applications are really only possible because of generative AI and LLMs.
+With the exception of [Clippy](https://en.wikipedia.org/wiki/Office_Assistant),
+this category of product basically didn’t exist before 2022, but since then
+we’ve seen such an explosion of new startups. Before LLMs, AI models simply were
+not smart or flexible enough to provide much help in complex creative domains.
+
+Importantly, when using AI as a creative assistant, the human is still very much
+in control. The AI will make suggestions, surface/summarize relevant
+information, or try writing a first draft. But the human - usually a highly
+capable knowledge worker - ultimately has the final say. The human gets to
+accept, reject, or tweak the AI’s suggestions.
+
+This means that the cost of mistakes is quite low. When I use GitHub Copilot and
+ChatGPT, they absolutely make mistakes. Occasionally they say things that are
+outright wrong. And even when they don’t make outright mistakes, I often chose
+to tweak or clean up their suggestions anyway. I almost never accept their
+suggestions blindly.
+
+But that doesn’t mean they aren’t still extremely useful, or that they don’t
+save me an incredible amount of time. After all, it’s much easier to edit
+something than it is to write it from scratch. Sometimes all you need the
+virtual assistant to do is to point you in the right direction.
+
+Overall, this use case has the potential to make knowledge workers much more
+efficient. It augments workers, rather than replacing them. And there is minimal
+risk.
+
+## AI as Business Process Outsourcing
+
+The second use case involves using AI to automate _entire_ business processes
+and completely replace humans, rather than augmenting them. This is similar to
+how many firms automate certain rote, highly repetitive processes to other firms
+and other countries (hence “business process outsourcing”).
+
+One of the very first projects I worked on at Yext was in this area. I’ll spare
+you the boring details, but basically we needed an algorithm that could
+determine whether two listings on the internet were a “match”, i.e. they
+represented the same person or place in the real world.
+
+We needed this because our Listings product would scan different publishers like
+Google Maps, Yelp, and TripAdvisor and we needed to reconcile the datasets from
+different publishers. (For example - does this McDonald’s on Google Maps _match_
+that McDonald’s on TripAdvisor?)
+
+This was an enormously expensive business process for Yext. By some estimates it
+was costing us close to $2 million per year. And it was just complicated enough
+that we couldn’t quite write a program to automate it. There was just enough
+nuance that you needed a human to go through the listings line by line.
+
+We quickly realized that, although a traditional program couldn’t perform this
+task, perhaps a machine learning algorithm could, and so we set out to train
+one. The resulting project taught us a lot about how to completely automate a
+human process using AI. We trained a random forest model model - a much older
+and simpler statistical model than the LLMs we’ve talked about so far - to
+perform this task, based on tens of millions of labeled examples we had compiled
+over the years.
+
+As time went on, we gradually allowed the model to handle more and more of the
+human workload with less and less supervision. Soon enough the model became
+_more_ accurate than humans, but we still required human review for some
+percentage of tasks to ensure we caught any signs of model drift.
+
+A huge number of business processes like this one will be candidates for
+automation in the coming years. Many of them are esoteric little tasks like
+Yext’s matching problem that are specific to each individual company, so it’s
+hard for me to predict exactly what this will look like.
+
+However, a few specific examples might include…
+
+- Classifying and routing support tickets - something that every call center
+  does thousands of times per day
+- Medical coding, which is the process of translating diagnoses and procedures
+  into standardized medical codes and costs the US economy more than $400
+  billion per year, according to a
+  [2016 study](https://www.rand.org/pubs/research_briefs/RB9900.html)
+- AML/KYC (Anti-Money Laundering / Know-Your-Customer), which is the process of
+  financial institutions doing due diligence on new and existing customers
+
+Of course, it’s been possible to automate tasks using AI and machine learning
+for many years now, and often older ML models are the right tool for the task,
+as in Yext’s case. However, LLMs significantly raise the bar for what can be
+automated while at the same time lowering the technical barrier.
+
+Our Yext matching project required millions of rows of training data and a data
+science team to train and deploy a model. If we were starting that same project
+today, I’m not sure we would have needed either. We might have instead given
+GPT-3 instructions on how to perform the task.
+
+It’s also important to remember that LLMs are not just capable of _writing_ -
+they can also reason, predict, and classify. This means they can be used to
+automate a wide variety of tasks, not just ones that involve writing prose.
+
+What’s challenging about outsourcing a process completely to AI is that there
+is, by definition, no longer a human directly in the loop. The whole point is to
+remove the costly human from the equation. This means that the requirements for
+accuracy become much higher, and additional safeguards are required to monitor
+and retrain the model over time.
+
+One of the best ways to mitigate risk is to **fine-tune **or **supervise **the
+model, which means training the model on many thousands or millions of examples
+of the task, as opposed to using the zero-shot learning, where you merely give
+the AI written instructions. The more examples you have, the more accurate the
+model becomes, minimizing the risk of mispredictions.
+
+But the risk is never zero. In evaluating this risk, however, it’s important to
+always ask “What’s the alternative?”, which is usually to have humans continue
+doing the task. Humans have the disadvantage of being both costly and slow, but
+if they are a more accurate/safer option then that cost is justified. However,
+humans are _not_ always a more accurate or safer option.
+
+As we found in the case of Yext’s matching problem, our machine learning
+algorithm quickly surpassed human performance. In other domains like
+self-driving cars and medical diagnosis, AI is quickly catching up to and
+exceeding human performance. And those are relatively complex tasks - for many
+routine business operations, AI today will surely be able to match or exceed
+human performance. Therefore, the question should not be “Can AI do this
+perfectly?” but instead “Does AI improve the status quo?” and in many cases the
+answer will be “yes”.
+
+The lowest hanging fruit here will be highly repetitive back-office work in the
+information economy. Importantly, AI still struggles with applications in the
+physical world, as evidenced by the surprising lack of adoption of self-driving
+cars in the last ten years. It turns out that getting AI to interact with the
+physical world in a safe, predictable way is extremely challenging.
+
+It will be a very long time before we have AI plumbers, chefs, or farmers. But
+AI medical coders? Or KYC analysts? Or paralegals? These are right around the
+corner, and it will behoove every business to automate this type of rote, manual
+work. Not only will it save enormous amounts of money, it will free your
+employees from some of the most thankless, unfulfilling work. This form of AI is
+likely to replace many jobs (we don’t do anyone any favors by pretending it
+won’t), but they are jobs that we will not miss.
+
+## AI as Digital Experience
+
+A third use case is using AI to create or augment digital experiences. This is
+the use case I focus on in my work at Yext - helping businesses create
+AI-powered digital experiences. I use “digital experience” as a broad term to
+refer to any touchpoint between a business and its end users. In this use case,
+AI is a medium through which the user interacts with a business or uses its
+services.
+
+This use case is already well-established. Most people have already been
+interacting with AI-powered digital experiences for years now. We use an
+AI-powered search engine every time we interact with Google. We use AI-powered
+recommendation engines to browse movies, songs, and products on Netflix,
+Spotify, and Amazon. We use AI-powered conversational agents like Siri and Alexa
+to look up information and perform tasks. AI is increasingly the medium through
+which we interact with digital businesses.
+
+When it comes to AI-powered digital experiences, we usually aren’t trying to
+replace a human but rather provide an experience that fundamentally can only be
+provided by software and AI. The human’s role - to the extent that there is
+one - is more so to monitor the AI’s behavior and curate the content that it has
+access to.
+
+AI-powered digital experiences have existed for nearly a decade now, but
+generative AI has the potential to enhance them significantly. It’s already
+enhancing search engines like Bing and Google, who have begun using LLMs within
+their search engines to allow users to have detailed conversations about search
+results.
+
+I would be shocked if Siri and Alexa didn’t introduce similar updates this year.
+These improvements will only make these products more integral to our lives, so
+it’s important to use products like
+[Yext Listings](https://www.yext.com/platform/listings) to manage your company’s
+presence on these platforms and search engines.
+
+It’s also possible that software platforms will start _generating media content_
+on the fly. What if Spotify could not only recommend music for you, but also
+_generate_ new music based on your preferences? I think this is at least several
+years off, but it’s not impossible to imagine.
+
+While building AI-powered digital experiences has historically only been
+possible for the largest, most advanced tech companies, advances in AI are
+making it possible - and in fact necessary - for average companies to deliver
+these experiences to their customers as well.
+
+Increasingly, consumers will expect every business they interact with to have
+personalized recommendations, an intelligent search engine, and a helpful
+virtual assistant. This is what we’re focused on at Yext: making it easy for any
+business to harness this technology to improve the digital experience for their
+customers.
+
+This takes many forms, such as…
+
+- A high-tech company providing a virtual assistant that can help users navigate
+  their documentation and answer complex questions about it. (A lot like the bot
+  you’ll find on [Yext Hitchhikers](https://hitchhikers.yext.com/home).)
+- A retailer providing personalized recommendations for complementary products,
+  as well as fast semantic search to help users find the precise product they’re
+  looking for.
+- A health system offering a virtual assistant that can help customers identify
+  the right doctor to treat their symptoms and get an appointment scheduled.
+
+As AI gets more powerful and widespread, consumer’s expectations will rise, and
+they will no longer tolerate clunky, outdated websites and chat bots. They will
+expect to be served relevant, dynamic content and to get instant, AI-generated
+answers to their questions. If they don’t, they’ll take their business
+elsewhere.
+
+## AI as Prediction and Forecasting
+
+The final use case is a relatively unsexy one that you won’t read as much about
+in the press, but is extremely valuable: AI can be used to predict the future.
+Astute readers will point out that _all_ AI is predictive; LLMs are _predicting_
+the next word in a sequence, diffusion models are _predicting_ the ideal set of
+pixels for an image, recommendation engines are _predicting_ whether a user will
+like a product.
+
+In this case I’m referring specifically to predicting business outcomes in the
+real world. For example:
+
+- Predicting consumer demand for a specific product based on historical trends
+- Predicting what the stock market will do tomorrow based on a variety of
+  factors
+- Predicting how likely a person is to repay a loan based on their payment
+  history
+- Predicting the weather tomorrow based on IOT data
+
+You might think of these things more so as “statistics” than “machine learning”
+or “artificial intelligence”, but, as it turns out, those are all the same
+thing! AI and machine learning* are* statistics, applied at an extraordinary
+scale and to problems that we don’t traditionally think of as involving numbers.
+
+This use case is the oldest of the four. We have been using math and statistics
+to predict the future for many decades now. What’s different today is that the
+algorithms can handle much more data than they previously could.
+
+For example, WeChat - the Chinese super app that spans social, commerce and
+payments - is rumored to predict users’ creditworthiness based on hundreds of
+thousands of seemingly unimportant data points that WeChat collects about its
+users, like how much battery their phone has left and how many different people
+they text on average.
+
+Historically, we would feed predictive models only a carefully curated set of
+signals or “features” that were known to have strong statistical relevance. (For
+example, if you wanted to predict the price of a house, you’d want to use square
+footage as a feature.) We might use ten or twenty of these data points to train
+a simple predictive model.
+
+But, over the past ten years, deep learning and large neural networks, combined
+with other innovations in data processing, allow us to train much larger models
+with many more features on massive datasets. These models are able to learn
+complex relationships and representations that would have been impossible to
+learn with more primitive statistical methods.
+
+Here once again the whole point of the model is to outperform a human, and
+usually these models do so handily. In fact, these models excel the most in the
+exact situations where human intuition fails. If you asked the average person to
+predict movements in commodity markets based on historical time series data,
+most surely couldn’t. This is a job for an algorithm. An algorithm can process
+far more data and observe statistical patterns that no human could.
+
+This use case is probably the most _unaffected_ by generative AI. In general,
+generative AI does not move the needle very much on our ability to produce
+statistical forecasts. For the most part, older ML methods like recurrent neural
+networks and even transformers work better here. But there are some exceptions -
+for example Deepmind recently released
+[Graphcast](https://medium.com/syncedreview/deepmind-googles-ml-based-graphcast-outperforms-the-world-s-best-medium-range-weather-9d114460aa0c),
+an algorithm that predicts the weather with state-of-the-art accuracy using
+generative AI. Perhaps generative AI will revolutionize this field as well.
+
+---
+
+The use cases we’ve discussed are by no means exhaustive, and many applications
+don’t fit neatly into a single category. (For example, I’m not sure where the
+facial recognition software on your iPhone fits in.) But still, this framework
+hopefully gives you a start for thinking about AI applications for your
+business.
+
+- AI can be used to assist creative knowledge workers such as programmers,
+  lawyers, doctors, teachers, or screenwriters. You should adopt this sooner
+  rather than later because there’s very little risk and, speaking from
+  experience, AI can be extremely helpful.
+- AI can be used to automate entire business processes, wholesale, but this is
+  riskier and requires high accuracy and additional monitoring/safeguards. But
+  often the risk is worth taking, and you should compare AI to the status quo,
+  not to perfection.
+- AI can be used to create immersive, helpful digital experiences. The human’s
+  job here is to curate content and tweak the algorithm’s behavior. This is
+  relatively low risk, and consumers will increasingly demand AI-powered
+  experiences of all companies, not just Google and Netflix.
+- AI can be used to forecast the future based on historical trends and other
+  data. This is a valuable application but relatively little has changed in this
+  arena.
+
+In reality, both the risk and the reward of all these applications has been
+overstated lately. It will take a very long time to retrofit existing business
+processes and digital experiences with new AI technologies, and I expect that
+when 2023 comes to a close we may look back and feel disappointed at how
+_little_ changed, compared to the AI revolution that was promised.
+
+But as Bill Gates famously said, “Most people overestimate what they can do in
+one year and underestimate what they can do in ten years,” and while we will
+assuredly be disappointed by what AI accomplishes this year, I think we might be
+utterly floored by what it accomplishes this decade.
