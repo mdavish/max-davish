@@ -21,7 +21,10 @@ const Home: NextPage<{ posts: BlogPost[] }> = ({ posts }) => {
           Product Manager
         </h2>
         <p className="text-gray-600">
-          I lead <a target="__blank" href="https://hitchhikers.yext.com/products/search">Search</a> at Yext.
+          I lead&nbsp;
+          <a target="__blank" href="https://www.yext.com/chat-beta">Chat</a>,&nbsp;
+          <a target="__blank" href="https://yext.com/platform/search">Search</a>,
+          and <a target="__blank" href="https://www.yext.com/platform/analytics">Analytics</a> at Yext.
           In my free time I write about software, artificial intelligence, and politics.
         </p>
         <div className="mt-4 flex flex-row gap-x-4">
