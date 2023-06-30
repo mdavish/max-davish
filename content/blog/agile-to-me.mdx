@@ -1,0 +1,322 @@
+---
+title: What "Agile" Means to Me
+date: 2023-06-30
+description: How to build software fast and flexibly.
+---
+
+For the last six months, my team and I have been building
+[Yext Chat](https://www.yext.com/platform/chat) - a brand new SaaS product for
+building customized, steerable chatbots powered by generative AI.
+
+For this project to be successful, we knew we needed to be _agile_ - to move
+fast and be flexible. The technology and market were rapidly evolving, so it was
+crucial to be nimble and experimental, not beholden to any particular master
+plan.
+
+The word “agile” means different things to different people, but for most
+software engineers it evokes the [Agile Manifesto](https://agilemanifesto.org/).
+
+The Agile Manifesto was written in 2001 by a group of software engineers seeking
+a more flexible approach to software development in contrast to the rigid
+“waterfall” method that dominated at most software companies at that time.
+
+Their manifesto outlined four core values:
+
+1. Individuals and Interactions over Processes and Tools
+2. Working Software Over Comprehensive Documentation
+3. Customer Collaboration Over Contract Negotiation
+4. Responding to Change over Following a Plan
+
+All good advice.
+
+However, these days, when people talk about the “agile method” they often get
+way too bogged down in the rituals and the dogma. My eyes glaze over whenever I
+hear the words “scrum”, “kanban”, “sprint planning”, or “retro”. I don’t know
+what half of that stuff is and I don’t think it matters. I think it distracts
+from the principles that _actually_ make a software team agile.
+
+In fact, the rituals of the agile methodology can become their own form of rigid
+bureaucracy when blindly followed. Engineers can too easily become slaves to
+their Jira boards, spending more time assigning story points or conducting
+sprint planning than they spend building software for their customers.
+
+What I’ve learned is that there is no single process or blueprint you can follow
+to be agile. Agility will look different for each company and each team. But
+there are still principles you can follow to make your team agile - to maximize
+the speed and efficiency with which you deliver great software (and have a lot
+of fun while doing it).
+
+Here are those principles as I’ve learned them over the last six months.
+
+### Let Process Evolve Naturally
+
+The first principle is to let processes evolve naturally to meet the needs of
+the team. The processes exist to serve the team, not the other way around.
+
+When I say “process” I’m referring to all of the various tools and rituals we
+have at our disposal for keeping track of work and staying on task. This
+includes…
+
+- Your issue tracking tool (Jira works, Linear is better)
+- Your Git workflow and code review process
+- The medium you choose to formalize your plans (“the spec”)
+- Your cadence of meetings, standups, retros, etc.
+
+I’ve learned that there is no single right way to do any of these things. It
+depends entirely on the nature of the team and the nature of the project. For
+example, while we were building Yext Chat we found daily standup meetings
+indispensable, because everyone’s work affected everyone else’s and we needed to
+stay constantly abreast of what everyone else was doing. But for a more mature
+product where each person’s work naturally becomes more siloed, a daily standup
+might be a waste of time.
+
+It’s possible to have too little or too much process, and I’ve seen teams suffer
+from both. You might have too little process if you find that people are doing
+duplicative or contradictory work. For example, if you end up with nasty merge
+conflicts that take days to disentangle, that’s probably a sign that there was
+too little process and that the team was not planning far enough ahead.
+
+However, the more common failure mode that I’ve seen is that there is _too much_
+process, not too little. This happens because process, like household clutter,
+quietly accumulates over time, and after a while everyone forgets why the
+process exists in the first place.
+
+My best advice for addressing this “process clutter” is to occasionally do
+“process spring cleaning”, which involves deleting standing meetings, getting
+rid of established processes, and cutting red tape wherever possible.
+Inevitably, you will find that _some_ of the processes that you got rid of were
+actually important, but you’ll also find that many of them were no longer
+necessary, perhaps because they were imposed during a different time when the
+team had different needs.
+
+That’s okay! You can always add a process back. You can always put meetings back
+on the calendar. But if you _never_ get rid of process, then gradually so much
+of it accumulates that it’s impossible to get anything done. This is what turns
+innovative startups into boring bureaucracies, and you must stave this off for
+as long as you can.
+
+### Write Things Down
+
+The written word is highly underrated in the modern workplace. I find that
+complex, important decisions are basically impossible to make unless someone has
+written a document which can serve as the foundation for making those decisions.
+Otherwise you end up talking in circles and accomplishing nothing.
+
+If you ever find yourself in such a meeting, end it immediately, designate one
+person to “own” the decision, and have this person write a narrative memo
+explaining the decision. Reconvene everyone and force them to read the document
+in silence and then discuss the decision.
+
+You might think that sitting down and writing a narrative memo contradicts the
+spirit of speed and agility, because writing is slow and time-consuming. It’s
+hard to do good writing in a hurry.
+
+But even though writing is hard and time-consuming, the time it takes to write
+down an idea is _far_ less than the time that writing will _save you_ in the
+future. Writing prevents you from wasting time in interminable meetings or
+bottomless Slack threads trying to reason through complex decisions. I’d much
+rather take the time to write a good comprehensive treatise on a subject than
+spend hours in meetings trying to muddle through a complicated decision.
+
+You should also make sure to memorialize each decision you make in writing.
+Ideally you should do this live, while everyone else is watching, and confirm
+that everyone agrees with what you’ve written. This serves two purposes. First,
+it ensures that you don’t forget the decision you’ve made (which happens all the
+time when you neglect to write things down).
+
+But second, it helps to uncover hidden areas of disagreement or confusion.
+People often _think_ that they’re in agreement at the end of a long
+conversation, but then discover that they actually aren’t because they
+misunderstood what the other person was saying. Memorializing a decision live
+can help uncover these misunderstandings quickly, which is far better than
+uncovering them weeks later.
+
+Clear writing is clear thinking. So whenever your team’s thinking becomes muddy,
+the best way to clear it up is by writing things down.
+
+### Make Prototypes
+
+However, as much as I love writing, written English is not always the best tool
+for exploring new ideas. Often _code_ is the best tool for that job. If you are
+trying out a truly novel idea, you’re often better off just building the damn
+thing instead of writing a long document explaining now it might work.
+
+I’ve found this to be especially true in two cases:
+
+1. designing complex user interfaces and
+2. designing complex, algorithmic product features.
+
+For building complex UI, our company used to write out tedious “use cases” or
+“user stories” for every possible aspect of the interface.
+
+A use case would read something like this:
+
+- The user clicks onto the “Home Screen” in the navigation.
+- The user hovers over the “Add Site” button.
+- After 250 ms, a tooltip appears.
+- The tooltip reads “blah blah blah”
+
+Don’t do this! It’s pointless! If you are capable of writing out all of the
+details of this user experience in English, you might as well just write them
+out in code, and at least then you’ll have a prototype at the end of it that you
+can play with and reason about. It’s basically impossible to judge whether a UI
+is “good” when you’re just looking at a written English description of it.
+
+The same is true for complex algorithmic product features. For example, if
+someone showed you a written description of Google, ChatGPT, or the Instagram
+Feed , would you have any idea how “good” the product would be? Of course not.
+You can only judge these products by using them and seeing their algorithms at
+work.
+
+The same has been true for Yext Chat. The quality of this product relies
+ultimately on the quality of the chat bot’s responses, and there is no way to
+judge that except by building the product, trying it out, and iterating further.
+That’s why we never bothered writing a spec for Yext Chat. The very first thing
+we did was build a prototype.
+
+### Understand the Value of Focus
+
+Part of the benefit of the agile methodology is the ability to change priorities
+quickly as requirements evolve. This is certainly a good thing because
+requirements really do change in the real world. You bring on new customers; you
+learn more about what they actually want; the technological landscape evolves.
+To meet these challenges, it’s important to be able to pivot quickly and deviate
+from your long term plan.
+
+However, this power should be used with great responsibility. Changing
+priorities isn’t free. As any engineer will tell you, _context switching_ is a
+productivity killer. Every time that an engineer has to switch what they’re
+working on, they have to reload a new area of the codebase into their brain, and
+it can take a while to hit their stride again. (This may be especially true for
+software engineers, but I think it applies to everyone.)
+
+Conversely, as an engineer gets deeper into one section of a codebase and spends
+more time thinking about a very specific problem, they gain increasing mastery
+over that section of the code and they start to uncover new insights and
+generate new ideas about how to make it work even better. This sort of mastery
+takes weeks, months, or even years to achieve, and you’ll never get it if you
+shift your focus every sprint.
+
+This doesn’t mean you should _never_ change priorities. That’s equally bad, and
+it’s why the agile manifesto states implores us to embrace change:
+
+> Welcome changing requirements, even late in development. Agile processes
+> harness change for the customer's competitive advantage.
+
+If you never allow requirements to change, you’ll never build something your
+customers truly love. But if you shift your priorities each sprint you won’t
+either.
+
+### Invest in Developer Productivity
+
+You should invest generously in making your team more productive. Let your team
+adopt the latest and greatest technologies, even if it takes some time to adopt
+them. Let them build libraries and internal tools that will make their work
+easier in the future. Most teams do too little of this, but I’ve almost never
+seen a team that does too much.
+
+Although developer tooling doesn’t deliver value directly to the customer, it
+controls the _speed_ with which the team can deliver value to the customer,
+which is just as important. Consider the simple math. If you spend a month on a
+project that will make your developers twice as productive, you may be a month
+behind, but you’ll be caught up within another month, and in 6 months you’ll be
+5 months ahead of where you would have been.
+
+### Go Fast
+
+In software, speed is the key to _quality_. This may seem counterintuitive. You
+might think that by taking your time and building a product slowly, it will turn
+out higher quality, with fewer mistakes. But in reality, this is not how
+building software works. In software, speed and quality are interrelated.
+
+The reason for this is that building great software requires that you iterate
+over and over again, releasing things, seeing what works, and then releasing
+more things. Ultimately you’re trying to figure out what actually needs to be
+built, and this requires iteration, and iteration requires speed.
+
+This is very different from, say, building a house, or painting a painting. You
+don’t get to iterate on a house or a painting. Once it’s done, it’s basically
+impossible to change, so you’d better take your time making sure it’s perfect
+the first time. But software isn’t this way. Software is constantly evolving,
+and you can usually make improvements very easily.
+
+Therefore it behooves you to ship things quickly, because once your software is
+shipped you’re actually in the best position to improve it, because you and your
+customers can use it and see exactly what needs to be improved.
+
+### Set Deadlines
+
+There are many ways you can increase the pace of work. One way is to impose
+deadlines. Deadlines can be a useful tool for motivating the team and increasing
+the pace of work. Without deadlines, work can go on endlessly. Without
+deadlines, you don’t have to make any hard tradeoffs. Deadlines can have a
+galvanizing effect on the team.
+
+However, deadlines should be thought of as a means to an end, not an end in and
+of itself. Deadlines are a way to make the team move faster than they would have
+otherwise. But for the most part, they’re basically meaningless. Your customers
+don’t care about them. So if you find that a deadline is causing your team to
+make bad decisions - like shipping software that simply isn’t ready, or causing
+people to pull all-nighters - then you should dispense with it.
+
+### Demo Often
+
+Every time a team member ships anything, no matter how small, it should be
+accompanied by a brief demo. Demoing often has two benefits. For one, it
+improves morale significantly. People love seeing their work come to life.
+Conversely, people hate slogging interminably on a project without seeing any
+tangible product.
+
+Another benefit is that it allows you to constantly adjust course. As we
+discussed already, many products - especially things that involve complex UI
+interactions or unpredictable AI models - are impossible to judge in the
+abstract. You have to actually play with them and see them in action to know if
+what you’ve built is any good.
+
+### Spend Time Working, Not Talking About Work
+
+The ratio of time spent actually working - boots on the ground, hands on
+keyboards - to time spent _talking about work_ - in meetings, sprint planning,
+on Slack, whatever - should be somewhere in the neighborhood of 90/10. At many
+(most?) companies this ratio is inverted. This is crazy. Do not let this happen.
+
+It’s very easy to spend endless amounts of time talking about “ways of working”,
+or planning for an upcoming sprint or product launch. Some amount of this is
+necessary. If you spend 100% of your time writing code and 0% of your time
+coordinating with your teammates, you will very quickly start pulling in
+different directions and the project will devolve into a disorganized mess.
+
+However, the much more common failure mode, in my experience, is that teams will
+spend the vast majority of their time in meetings coordinating with another,
+debating abstract ideas about what needs to be done and how it should get done.
+Their work-to-talking-about-work ratio is out of whack.
+
+The antidote to this disease is to shut up and build something. Get in there and
+write the code. Even if it doesn’t come out perfectly, you'll actually have
+something tangible that you can discuss, instead of discussing things
+interminably in the abstract. (This gets back to the _Make Prototypes_
+principle - it’s easier to make decisions about real working products than it is
+about abstract ideas on paper.)
+
+### Let the Best Ideas Win
+
+This is the most important principle on this list. You must let the best ideas
+rise to the top and win, no matter who or where they come from. Too often, the
+engineering manager, or product manager, or some executive, is the only one
+allowed to come up with ideas. This is bad.
+
+You want a culture where everyone can come up with ideas, and where the ideas
+win purely based on merit, not based on who had them. Seniority shouldn’t
+matter. Great ideas come from the top, bottom, and middle.
+
+One reason this is important is that finding the best ideas is a game of numbers
+and probability. Most ideas aren’t good - even if they come from really smart
+people - but a small minority are. So the name of the game is to have a lot of
+shots on goal, so to speak. Try out many ideas, accepting that many won’t work,
+but that a small percentage will work very well.
+
+Another even more important reason this is important is that people are willing
+to work a lot harder on _their_ idea than someone else’s. It’s very demotivating
+to feel as if you have no control over what you’re building. But if you feel
+like it’s at least partially _your_ invention, you will work harder and make a
+better, more beautiful product.
