@@ -4,6 +4,7 @@ import Layout from '../../components/Layout'
 import Head from 'next/head';
 import { stringTypeGuard } from '../../utils/typeguards';
 import { BlogPost, getBlogPosts, getBlogPost } from '../../utils/files';
+import Link from 'next/link';
 
 
 const BlogPost: NextPage<{ post: BlogPost }> = ({ post }) => {
@@ -16,6 +17,11 @@ const BlogPost: NextPage<{ post: BlogPost }> = ({ post }) => {
         <meta name="description" content={post.description} />
       </Head>
       <Layout>
+        <Link
+          className='text-sm'
+          href="/">
+          Home
+        </Link>
         <h1 className="text-4xl font-bold">
           {post.title}
         </h1>
