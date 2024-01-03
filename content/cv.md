@@ -3,12 +3,13 @@
 ## About
 
 I'm Max. I'm a senior product manager at [Yext](https://www.yext.com/), where I
-lead our [Chat](https://www.yext.com/chat-beta),
+lead the [Chat](https://www.yext.com/platform/chat),
 [Search](https://www.yext.com/platform/search) and
-[Analytics](https://www.yext.com/platform/analytics) products. I'm focused on
-building products that make it easy for average companies to build amazing
-digital experiences using the same data and machine learning tools that tech
-giants like Google and Amazon use.
+[Analytics](https://www.yext.com/platform/analytics) products.
+
+I'm focused on building products that make it easy for average companies to
+build amazing digital experiences using the same data and machine learning tools
+that tech giants like Google and Amazon use.
 
 Reach me at [davish9@gmail.com](mailto:davish9@gmail.com) or learn more on my
 [personal website](/).
@@ -27,6 +28,7 @@ conversational agents powered by large language models.
 
 Yext Search is an enterprise search platform that makes it easy for any company
 to build search for their website, e-commerce storefront, or support portal.
+
 Yext Analytics is our platform for collecting data on how users are interacting
 with Yext-powered properties, such as your search experience, website, or
 third-party publishers like Google Maps.
