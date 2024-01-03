@@ -1,17 +1,15 @@
-import { BlogPost } from "../utils/files"
-import Link from "next/link";
+import { BlogPost } from '../utils/files';
+import Link from 'next/link';
 
 const BlogPreview = ({ post }: { post: BlogPost }) => {
   return (
-    <div>
-      <Link href={`/blog/${post.slug}`}>
-        <a className="text-lg">
-          {post.title}
-        </a>
+    <div className="flex flex-col gap-y-1">
+      <Link href={`/blog/${post.slug}`} className="text-base">
+        {post.title}
       </Link>
-      <p className="text-gray-700">{post.description}</p>
+      <p className="text-gray-700 text-sm">{post.description}</p>
     </div>
-  )
-}
+  );
+};
 
 export default BlogPreview;

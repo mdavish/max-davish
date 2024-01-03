@@ -25,7 +25,7 @@ const BlogPost: NextPage<{ post: BlogPost }> = ({ post }) => {
         </Link>
         <h1 className="text-4xl font-bold">{post.title}</h1>
         <div className="text-gray-500">{prettyDate}</div>
-        <ReactMarkdown className="prose prose-gray prose-h1:text-5xl prose-h1:font-bold pb-40 print:pb-0">
+        <ReactMarkdown className="prose prose-slate prose-base prose-h1:text-4xl prose-h1:font-bold pb-40 print:pb-0">
           {post.content}
         </ReactMarkdown>
       </Layout>
