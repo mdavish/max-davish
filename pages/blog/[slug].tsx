@@ -23,9 +23,9 @@ const BlogPost: NextPage<{ post: BlogPost }> = ({ post }) => {
         <Link className="text-sm" href="/">
           Home
         </Link>
-        <h1 className="text-4xl font-bold">{post.title}</h1>
-        <div className="text-gray-500">{prettyDate}</div>
-        <ReactMarkdown className="prose prose-slate prose-base prose-h1:text-4xl prose-h1:font-bold pb-40 print:pb-0">
+        <h1 className="text-3xl md:text-4xl font-medium">{post.title}</h1>
+        <div className="text-slate-500">{prettyDate}</div>
+        <ReactMarkdown className="prose prose-blockquote:not-italic prose-blockquote:font-normal prose-blockquote:text-slate-700 prose-slate prose-base max-w-none prose-h1:text-4xl prose-h1:font-bold print:pb-0">
           {post.content}
         </ReactMarkdown>
       </Layout>
