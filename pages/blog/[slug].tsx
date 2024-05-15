@@ -1,10 +1,11 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import ReactMarkdown from 'react-markdown';
+import { MDXRemote } from 'next-mdx-remote';
 import Layout from '../../components/Layout';
 import Head from 'next/head';
 import { stringTypeGuard } from '../../utils/typeguards';
 import { BlogPost, getBlogPosts, getBlogPost } from '../../utils/files';
 import Link from 'next/link';
+import classNames from 'classnames';
 
 const BlogPost: NextPage<{ post: BlogPost }> = ({ post }) => {
   const date = new Date(post.date);
@@ -23,11 +24,19 @@ const BlogPost: NextPage<{ post: BlogPost }> = ({ post }) => {
         <Link className="text-sm" href="/">
           Home
         </Link>
-        <h1 className="text-3xl md:text-4xl font-medium">{post.title}</h1>
+        <h1 className="text-3xl md:text-3xl font-medium">{post.title}</h1>
         <div className="text-slate-500">{prettyDate}</div>
-        <ReactMarkdown className="prose prose-blockquote:not-italic prose-blockquote:font-normal prose-blockquote:text-slate-700 prose-slate prose-base max-w-none prose-h1:text-4xl prose-h1:font-bold print:pb-0">
-          {post.content}
-        </ReactMarkdown>
+        <div
+          className={classNames(
+            'prose  prose-blockquote:not-italic prose-blockquote:font-normal prose-blockquote:text-slate-700 prose-slate prose-base max-w-none prose-h1:font-bold print:pb-0',
+            'prose-h1:text-xl prose-h1:font-medium prose prose-h1:text-slate-900',
+            'prose-h2:text-lg prose-h2:font-medium prose-h2:text-slate-800',
+            'prose-h3:text-lg prose-h3:font-medium prose-h3:text-slate-700',
+            'prose-h4:text-base prose-h4:font-medium prose-h4:text-slate-600'
+          )}
+        >
+          <MDXRemote {...post.mdxSource} />
+        </div>
       </Layout>
     </div>
   );
@@ -40,7 +49,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       notFound: true,
     };
   }
-  const post = getBlogPost(slug);
+  const post = await getBlogPost(slug);
   return {
     props: {
       post,
@@ -49,7 +58,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = getBlogPosts();
+  const posts = await getBlogPosts();
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }));

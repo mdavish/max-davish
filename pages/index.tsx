@@ -17,7 +17,7 @@ const Home: NextPage<{ posts: BlogPost[] }> = ({ posts }) => {
       <Layout>
         <div className="flex flex-col gap-y-2 md:flex-row w-full items-start">
           <div className="flex flex-col gap-y-4">
-            <h1 className="text-4xl md:text-5xl font-medium text-slate-900">
+            <h1 className="text-4xl md:text-3xl font-medium text-slate-900">
               Max Davish
             </h1>
             <p className="text-slate-600">Working on something new.</p>
@@ -62,7 +62,7 @@ const Home: NextPage<{ posts: BlogPost[] }> = ({ posts }) => {
           </div>
         </div>
         <div className="mt-8 flex flex-col gap-y-5">
-          <h3 className="text-2xl md:text-3xl font-medium">Blog</h3>
+          <h3 className="text-2xl md:text-xl font-medium">Blog</h3>
           {posts.map((post) => (
             <BlogPreview key={post.slug} post={post} />
           ))}
@@ -73,7 +73,7 @@ const Home: NextPage<{ posts: BlogPost[] }> = ({ posts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getBlogPosts();
+  const posts = await getBlogPosts();
   const orderedPosts = posts.sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
