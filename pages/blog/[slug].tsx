@@ -3,7 +3,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import Layout from '../../components/Layout';
 import Head from 'next/head';
 import { stringTypeGuard } from '../../utils/typeguards';
-import { BlogPost, getBlogPosts, getBlogPost } from '../../utils/files';
+import { type BlogPost, getBlogPosts, getBlogPost } from '../../utils/files';
 import Link from 'next/link';
 import classNames from 'classnames';
 
