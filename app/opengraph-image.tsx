@@ -15,6 +15,10 @@ export default async function Image() {
     new URL('@/public/Inter-SemiBold.ttf', import.meta.url)
   ).then((res) => res.arrayBuffer());
 
+  const headshot = fetch(
+    new URL('@/public/headshot.jpeg', import.meta.url)
+  ).then((res) => res.arrayBuffer());
+
   return new ImageResponse(
     (
       <div
@@ -37,7 +41,8 @@ export default async function Image() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://example.com/path-to-your-headshot.jpg"
+            // @ts-ignore
+            src={await headshot}
             width={200}
             height={200}
             style={{
