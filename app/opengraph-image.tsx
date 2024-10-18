@@ -11,16 +11,11 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
-  const interRegular = fetch(
-    new URL('@/public/Inter-Regular.ttf', import.meta.url)
-  ).then((res) => res.arrayBuffer());
-
-  const interSemiBold = fetch(
-    new URL('@/public/Inter-SemiBold.ttf', import.meta.url)
-  ).then((res) => res.arrayBuffer());
-
-  const myPhoto = fetch(
-    new URL('@/public/headshot.jpeg', import.meta.url)
+  const interSemiBold = await fetch(
+    new URL(
+      'https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap',
+      import.meta.url
+    )
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
@@ -45,8 +40,7 @@ export default async function Image() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            // @ts-ignore
-            src={await myPhoto}
+            src="https://example.com/path-to-your-headshot.jpg"
             width={200}
             height={200}
             style={{
@@ -71,7 +65,7 @@ export default async function Image() {
       fonts: [
         {
           name: 'Inter',
-          data: await interSemiBold,
+          data: interSemiBold,
           style: 'normal',
           weight: 600,
         },
