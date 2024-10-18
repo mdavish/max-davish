@@ -68,9 +68,8 @@ export default async function BlogPost({
           'prose-h4:text-base prose-h4:font-medium prose-h4:text-slate-600'
         )}
       >
-        <Suspense fallback={<div>Loading...</div>}>
-          <MDXRemote source={post.content} />
-        </Suspense>
+        {/* @ts-ignore */}
+        <MDXRemote source={post.content} />
       </div>
     </div>
   );
