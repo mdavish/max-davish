@@ -11,11 +11,8 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
-  const interSemiBold = await fetch(
-    new URL(
-      'https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap',
-      import.meta.url
-    )
+  const interSemiBold = fetch(
+    new URL('@/public/Inter-SemiBold.ttf', import.meta.url)
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
@@ -65,7 +62,7 @@ export default async function Image() {
       fonts: [
         {
           name: 'Inter',
-          data: interSemiBold,
+          data: await interSemiBold,
           style: 'normal',
           weight: 600,
         },
