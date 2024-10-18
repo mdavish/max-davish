@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { promises as fs } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -20,7 +21,7 @@ const frontMatterError = (slug: string) => {
   return `Front matter is missing from ${slug}. Front matter must contain title, date, and description.`;
 };
 
-export async function getBlogPosts(): Promise<BlogPost[]> {
+export const getBlogPosts = cache(async (): Promise<BlogPost[]> => {
   const files = await fs.readdir(path.join(process.cwd(), 'content/blog'));
   const blogPostsPromises = files.map(async (fileName) => {
     const slug = fileName.replace(/\.mdx$/, '');
@@ -44,9 +45,9 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
     };
   });
   return Promise.all(blogPostsPromises);
-}
+});
 
-export async function getBlogPost(slug: string): Promise<BlogPost> {
+export const getBlogPost = cache(async (slug: string): Promise<BlogPost> => {
   const markdownWithMeta = await fs.readFile(
     path.join('content/blog', slug + '.mdx'),
     'utf-8'
@@ -65,4 +66,4 @@ export async function getBlogPost(slug: string): Promise<BlogPost> {
     content,
     mdxSource,
   };
-}
+});

@@ -1,4 +1,4 @@
-import { BlogPost } from '../utils/files';
+import { BlogPost } from '@/utils/files';
 import Link from 'next/link';
 
 const BlogPreview = ({ post }: { post: BlogPost }) => {
