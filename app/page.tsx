@@ -29,7 +29,10 @@ export default async function Home() {
         <div className="flex-grow flex flex-col">
           <div className="flex flex-col gap-y-3">
             <h1 className="text-3xl font-medium text-slate-800">Max Davish</h1>
-            <p className="text-slate-600">Working on something new.</p>
+            <p className="text-slate-600">
+              Co-founder and CTO of{' '}
+              <a href="https://www.getquotient.ai/">Quotient.</a>
+            </p>
           </div>
           <div className="mt-4 flex flex-row gap-x-4">
             <a
