@@ -1,0 +1,379 @@
+---
+title: 10 AI Predictions for 2030
+date: 2025-05-14
+description: What the future of AI holds.
+---
+
+> Predictions are hard. Especially about the future.
+
+_\- Yogi Berra_
+
+I first drafted this essay about four months ago. A lot has happened since then.
+Here is a list of new AI models and products that have been released in the last
+120 days alone:
+
+- DeepSeek r1
+- OpenAI o3 and o4-mini
+- GPT-4.1, GPT-4.1 Mini, and Nano
+- Gemini 2.5 Pro and Flash
+- Claude 3.7 Sonnet
+- Deep Research (from OpenAI, Perplexity, and Google)
+
+The models are consistently getting better and cheaper, achieving ever higher
+scores on benchmarks and enabling new and exciting use cases.
+
+This progress is fueled by a deluge of investment both at the infrastructure
+layer, with huge projects like Stargate, as well as the application layer, where
+venture capital is pouring money into AI startups (like mine!) and minting new
+unicorns each week. The pace of innovation and the frenzy of investment is
+unlike anything I've ever seen before.
+
+Some of the developments of the past few months would seem to refute the
+predictions I make in this essay. But I’ve (mostly) resisted the temptation to
+revise them. When we forecast the future, we tend to overweight recent events,
+and I’m trying to resist that recency bias.
+
+Yet the last few months have served as a clear reminder that _no one_ can
+predict the future of AI. The field is moving so quickly that even experts \-
+perhaps _especially_ experts \- cannot confidently say what the world will look
+like five years from now. No one can predict the future.
+
+But that won’t stop me from trying.
+
+Here are my ten predictions for AI over the next five years.
+
+## 1\. Gains in Intelligence will be Hard Fought
+
+Many have predicted that LLM intelligence will increase exponentially, much like
+the size of transistors has decreased exponentially under Moore’s law.
+
+Leopold Ashchenbrenner is a notable proponent of this view, having caught the
+attention of White House insiders like
+[Ivanka Trump](https://x.com/IvankaTrump/status/1839002887600370145?lang=en)_._
+In his now famous essay, _Situational Awareness,_ he writes:
+
+> AGI by 2027 is strikingly plausible. GPT-2 to GPT-4 took us from \~preschooler
+> to \~smart high-schooler abilities in 4 years. \[...\] We should expect
+> another preschooler-to-high-schooler-sized qualitative jump by 2027.
+
+![Leopold Ashchenbrenner's prediction](https://situational-awareness.ai/wp-content/uploads/2024/06/base_scaleup.png)
+
+<div className="text-center text-xs text-gray-500">
+  (Source: [Situational Awareness](https://situational-awareness.ai/))
+</div>
+
+I’m not so optimistic.
+
+LLMs will no doubt get smarter each year, and they will achieve progressively
+better scores on benchmarks like [Arc AGI](https://arcprize.org/arc) and
+[Humanity’s Last Exam](https://agi.safe.ai/).
+
+But the notion that the progress will be as exponential as the increases in
+processing power that came from Moore’s law seems unlikely to me. I expect that
+it will become more and more challenging to eke out gains in intelligence. I
+also expect that progress on contrived benchmarks will _not_ always translate to
+improved performance on real world tasks.
+
+If you use LLMs often, you may already have begun to see this divergence. The
+reasoning models that score best on various benchmarks, like o3, are often not
+as practically useful as “dumber” models like Claude Sonnet. A recent paper
+titled [The Leaderboard Illusion](https://arxiv.org/abs/2504.20879) describes
+this phenomenon well.
+
+Gains in intelligence will be hard fought for a simple reason: It’s easy to
+train a model on what’s already been done. It’s much harder to train a model on
+things that haven’t been done before.
+
+So far it has been fairly straightforward to create models that are as smart as
+humans because there is abundant _training_ data created by humans.
+
+But making models _smarter_ than the smartest humans will be much more
+difficult. What training data can we feed them? Who would produce it?
+
+My prediction here is that models _will_ continue to improve \- they will not
+necessarily "hit a wall” \- but that the gains will be increasingly hard fought,
+and that the most optimistic predictions, like Aschenbrenner’s, will turn out to
+be wrong.
+
+## 2\. Gains in Speed & Efficiency Will Come Easily
+
+I am much more optimistic about improvements in speed and cost efficiency. I
+predict that the cost of intelligence will fall rapidly over the next five
+years. I expect LLMs to follow a trajectory like Moore’s law in this respect.
+
+This trend has already been happening since 2022, and I expect it to continue
+unabated:
+
+![Cost of Intelligence](https://d1lamhf6l6yk6d.cloudfront.net/uploads/2024/11/LLMflation%E2%80%93Inline-2-1.png)
+
+<div className="text-center text-xs text-gray-500">
+  (Source: [a16z](https://a16z.com/llmflation-llm-inference-cost/))
+</div>
+
+(Note that this is a logarithmic scale!)
+
+I predict that this trend will continue apace, thanks to…
+
+- Improvements in chip design, like Nvidia’s Blackwell GPU architecture
+- Algorithmic improvements, like mixture-of-experts and more efficient,
+  sub-quadratic attention mechanisms
+- More data centers and power plants, leading to increased energy efficiency and
+  market competition
+
+Just as the cost of compute has been going to zero since Gordon Moore
+established Moore’s law in 1964, so will the cost of intelligence drop
+precipitously, enabling all manner of exciting new applications that would be
+unimaginably costly today.
+
+## 3\. Neither Open Source Nor Closed Will “Win”
+
+There is an ongoing contest between closed AI \- represented (ironically) by
+OpenAI and Anthropic \- and open source AI \- championed by Meta, Mistral, and
+more recently DeepSeek.
+
+I predict that the only real winner in this contest will be consumers, who will
+have a more diverse, competitive ecosystem to choose from. Open-source and
+properietary models will coexist and specialize in different applications.
+
+This is quite a lot like the OS wars of the 80s and 90s, when Mac, Windows, and
+Linux all competed to be the dominant operating system of the day. No one really
+won \- all three operating systems are still used today in different contexts.
+
+MacOS attracted consumers who enjoyed the tight integration of OS and hardware.
+Windows won consumers and businesses who wanted the freedom to choose whatever
+hardware they wanted. And Linux became the dominant OS for servers (and
+neckbearded hackers).
+
+I expect LLMs will follow a similar path. For consumer applications, no one is
+going to run their own open source LLM, no matter how much they care about
+privacy. They’ll simply consult ChatGPT, Claude, or Gemini.
+
+Businesses will choose between open source and proprietary models depending on
+their needs. If privacy is paramount, they might run open source models on-prem.
+For businesses that don’t care or don’t have sufficient scale to justify owning
+their own compute, proprietary models will make more sense.
+
+What I hope and predict is that both models are allowed to coexist and compete
+with one another and that neither dominates. This will be better for consumers
+in the long run.
+
+## 4\. LLMs are Not the Final Architecture
+
+So far we’ve talked about LLMs as if they are the only model architecture \- and
+for now, they might as well be. But I expect that the biggest breakthrough of
+the next decade will be a new model architecture that combines the linguistic
+intelligence of LLMs with visual-spatial intelligence.
+
+I don’t think we can reach AGI \- whatever that means \- with LLMs alone. Even
+if LLMs surpass the intelligence of the smartest humans, they’ll still be stuck
+in a box, unaware of the physical world and unable to interact with it.
+
+The next crucial breakthrough, I predict, will be a new model architecture that
+can do both. I suspect this development might come from a new research lab like
+Fei Fei Li’s [World Labs](https://www.worldlabs.ai/), whose mission is “to lift
+AI models from the 2D plane of pixels to full 3D worlds \- both virtual and real
+\- endowing them with spatial intelligence as rich as our own.” Or it might very
+well come from Tesla, whose self-driving unit already leads the world in spatial
+AI.
+
+I can’t say for certain that this will happen by 2030\. It might, but it also
+wouldn’t surprise me if it took much, much longer. What I do feel strongly
+about, though, is that when it does happen, it will be the most important
+breakthrough in model architecture since the transformer.
+
+## 5\. Google’s Search Monopoly Gradually Erodes
+
+The sun has passed high noon on Google’s Search Monopoly. (Is that a phrase? I'm
+not sure. It sounds like it should be.) I predict Google will eventually lose
+market share to ChatGPT and other LLM assistants like Perplexity and Claude.
+
+I base this prediction chiefly on my own habits as a consumer. I rarely use
+Google search anymore. Roughly 75% of my search queries go directly to ChatGPT
+or Claude. For another 15% where up-to-date information is crucial, I go to
+Perplexity (although less and less, now that ChatGPT has search built in). The
+remaining 10% go to Google, mostly for location-based queries, sports scores, or
+local movie times.
+
+OpenAI seems laser focused on becoming a consumer tech company that can go
+toe-to-toe with Google, and so far they are succeeding. ChatGPT usage is
+currently growing 30% quarter-over-quarter, and they are pouring resources into
+new features like improved memory, image generation, and deep research. Sam
+Altman [recently said](https://youtu.be/ctcMA6chfDY?t=547) that Open AI aspires
+to be "people's core AI subscription".
+
+Google, on the other hand, confronts the quintessential innovator’s dilemma. To
+compete in the new chatbot market, they risk cannibalizing their existing search
+ads business. Even though Google’s LLMs are excellent and very much on par with
+Open AI's, Gemini has a small fraction of ChatGPT’s user base.
+
+But Google’s dominance will not disappear overnight. They could coast on the
+momentum of their search business \- the most profitable business unit in
+history \- for many years and be just fine. In fact that’s probably what they
+will do.
+
+But over time, their monopoly will erode. In 20 years, the search advertising
+industry will be a small fraction of what it is today, and Google will need to
+invest in new products if they wish to maintain their dominant status.
+
+## 6\. No More Foundation Model Companies
+
+I predict that there will be no new foundation model companies of any
+significance founded between now and 2030\. The capital requirements are simply
+too great, and the market can only support a handful of them.
+
+The key players that exist today, along with their capital partners \-
+OpenAI/Microsoft, Anthropic/Amazon, Google/DeepMind, Meta, DeepSeek, and Mistral
+\- will continue to duke it out for at least the next five years, probably much
+longer. I would not be surprised to see _more_ consolidation (hard to imagine
+Mistral surviving for 10 more years without being acquired).
+
+If I were a venture capitalist I would _not_ be eager to invest in new
+foundation model companies. Instead, I would look for returns in the application
+layer, which leads us to our next point.
+
+## 7\. Cambrian Explosion of Application Layer Companies
+
+While the race in the model layer is mostly over, the race in the _application_
+layer is only just getting started. I predict that the second half of the 2020s
+will see a Cambrian explosion of new application layer companies that leverage
+AI in exciting new ways.
+
+I predict that most of the action here will be in the B2B space, not the B2C
+space. The B2C space might see some exciting new applications \- like AI
+girlfriends or AI personal trainers \- but they will look relatively small
+compared to the B2B applications.
+
+The knowledge economy is teeming with opportunities to enhance productivity and
+automate workflows using AI. This opportunity will be seized, I predict,
+primarily by new companies that don’t exist yet or are only now in their
+infancy.
+
+The next Salesforce, Adobe, Shopify, Intuit, and Hubspot \- these are all
+waiting to be built. (My company, [Quotient](https://www.getquotient.ai/), will
+be one of them. Just wait and see.)
+
+## 8\. The US Will Lead, with China Close Behind
+
+In January, [DeepSeek R1](https://arxiv.org/abs/2501.12948), a powerful and
+shockingly cheap reasoning model from a Chinese lab, had many people wondering
+if China was catching up to the US in AI dominance. Around the same time,
+President Trump signed an executive order titled _“Removing Barriers to American
+Leadership in Artificial Intelligence”,_ which stated “it is the policy of the
+United States to sustain and enhance America's global AI dominance in order to
+promote human flourishing, economic competitiveness, and national security”.
+
+The competition has begun, and the two most powerful nations on earth both
+understand the importance of AI supremacy to their economic and military
+stature.
+
+I predict that America will win this competition, but I’m betting it will be
+close. Xi Jinping has long lamented China’s status as a laggard in the
+semiconductor industry, and he has been trying desperately to catch up by
+subsidizing domestic firms like Huawei, stealing US IP, and pushing for supply
+chain self-sufficiency.
+
+Xi won’t let China fall behind again. To China’s credit, breakthroughs like
+DeepSeek R1 prove that China has the talent to go toe to toe with America in
+this new arms race. We shouldn’t underestimate them.
+
+And yet I think that America will ultimately win. Our ecosystem is simply more
+competitive, our talent pool is deeper, our culture is more innovative, and our
+markets are freer, less bogged down by state control. I also predict that China
+will be consistently hamstrung by export controls that constrict its access to
+GPUs.
+
+I predict that in 2030, American AI companies will still be the most important
+and most successful on the planet, and that we will lead the world through yet
+another technological revolution.
+
+The rest of the world, I expect, will be mostly irrelevant in this competition.
+The EU is too overregulated and lacks the political will to do anything.
+Everywhere else lacks the capital and infrastructure.
+
+## 9\. The Economy Will Change Only Slowly
+
+Bill Gates famously said “Most people overestimate what they can do in one year
+and underestimate what they can do in ten years.”
+
+Similarly, most people overestimate how much the _world_ can change in one year,
+but underestimate how much it can change in twenty.
+
+This will be true of AI. I expect that by 2030, we will look back and feel
+somewhat underwhelmed by the degree to which AI has changed the world economy.
+
+In a [recent interview](https://www.dwarkeshpatel.com/p/tyler-cowen-4), Dwarkesh
+Patel asked Tyler Cowen, “Why won't we have explosive economic growth, 20% plus,
+because of AI?”
+
+Cowen’s response summarizes my more measured view well:
+
+> It's very hard to get explosive economic growth for any reason, AI or not.
+> \[...\] That will take, say, 30 years. So you'll have some sectors of the
+> economy, less regulated, where it happens very quickly. But that only gets you
+> a modest boost in growth rates, not anything like the whole economy grows 40%
+> a year.
+
+Even a technology as miraculous as AI takes a long time to permeate the economy.
+Even the most forward thinking companies move at glacial pace. What about more
+risk averse, regulated industries? It might take a decade before doctors are
+allowed to use LLMs in their daily work (which is unfortunate, and will result
+in many preventable deaths).
+
+So don’t hold your breath. By 2030 I predict that AI adoption will have grown
+considerably, and that it will modestly boost economic growth. But for the most
+part we will feel disappointed by the pace of change. Many of us will wish that
+we could use _more_ AI in our jobs, and we’ll often ask “Shouldn’t AI be able to
+do this for me?”
+
+## 10\. AI Will Benefit the Smartest and Richest Most
+
+Consider two possibilities:
+
+1. AI makes cognitive ability economically irrelevant, because everyone has
+   access to the same superhuman intelligence. In the same way that physical
+   strength used to be an economic asset when most people worked in the fields,
+   cognitive ability will cease to be an economic asset, rendered obsolete by
+   AI.
+
+2. AI proves most valuable to the smartest people who know how to wield it best.
+   It acts as a _multiplier_ on human intelligence. The smartest, most
+   productive people are made _smarter_ and _more_ productive. Their cognitive
+   economic advantages are magnified.
+
+Which scenario seems more likely to you?
+
+I’m betting the farm on scenario \#2.
+
+I’m betting that AI is not a great economic equalizer but rather an accelerant
+to inequality.
+
+As is well known, inequality has been increasing steadily in America since
+1960\. Between 1960 and 2020, the Gini coefficients for wealth and income
+inequality increased by 42% and 20% respectively.
+
+Experts argue about the cause of rising inequality \- some say it’s that tax
+policies favor the rich and big corporations, others say it’s that globalization
+shipped all of the good middle class jobs overseas.
+
+I’ve always felt that the real reason is that we live increasingly in a world
+where the smartest and most capable people can use computers and the internet to
+automate a great deal of labor that once provided gainful employment for a
+thriving middle class. The more we automate, the less work there is for anyone
+to do but the very smartest among us \- the cognitive elite.
+
+Unfortunately I expect AI will only exacerbate this trend. Think of all of the
+lower level white collar workers who can be put out of a job by AI. Call center
+employees, data analysts, paralegals. Anyone who does repetitive, rote cognitive
+work.
+
+Fortunately, there is a glimmer of hope. After all, at one point the vast
+majority of humans worked on farms. As technology automated farming, humans
+learned different skills and found employment in other fields of endeavor. Most
+of us today have jobs that would have been unimaginable to our ancestors. (And,
+importantly, we also have living standards that are unimaginably superior to
+anything our ancestors could have imagined.)
+
+In the short term, I predict some degree of job loss and a corresponding
+increase in inequality. But in the long term, I remain mostly optimistic, as I
+believe we will find new economic roles for humans and we will achieve ever
+greater standards of living.
