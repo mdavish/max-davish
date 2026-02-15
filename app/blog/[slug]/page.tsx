@@ -68,7 +68,7 @@ export default async function BlogPost({
           'prose-h4:text-base prose-h4:font-medium prose-h4:text-slate-600'
         )}
       >
-        {/* @ts-ignore */}
+        {/* @ts-expect-error Async Server Component */}
         <MDXRemote source={post.content} />
       </div>
     </div>

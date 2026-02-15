@@ -3,13 +3,11 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { frontMatterTypeGuard } from './typeguards';
-import { serialize } from 'next-mdx-remote/serialize';
 
 export type FrontMatter = {
   title: string;
   date: Date | string;
   description: string;
-  mdxSource: Awaited<ReturnType<typeof serialize>>;
 };
 
 export type BlogPost = {
@@ -34,14 +32,12 @@ export const getBlogPosts = cache(async (): Promise<BlogPost[]> => {
       throw new Error(frontMatterError(slug));
     }
     const { title, date, description } = frontmatter;
-    const mdxSource = await serialize(content);
     return {
       slug,
       content,
       title,
       date: date.toString(),
       description,
-      mdxSource,
     };
   });
   return Promise.all(blogPostsPromises);
@@ -57,13 +53,11 @@ export const getBlogPost = cache(async (slug: string): Promise<BlogPost> => {
   if (!frontMatterTypeGuard(frontmatter)) {
     throw new Error(frontMatterError(slug));
   }
-  const mdxSource = await serialize(content);
   return {
     slug,
     title,
     date: date.toString(),
     description,
     content,
-    mdxSource,
   };
 });
