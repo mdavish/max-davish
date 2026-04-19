@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 import { readFile } from 'fs/promises';
 import path from 'path';
-import { getBlogPost } from '@/utils/files';
+import { getBlogPost, getBlogPosts } from '@/utils/files';
 
 export const alt = 'Max Davish Blog';
 export const size = {
@@ -9,6 +9,11 @@ export const size = {
   height: 630,
 };
 export const contentType = 'image/png';
+
+export const generateStaticParams = async () => {
+  const posts = await getBlogPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+};
 
 export default async function Image({
   params,
@@ -19,12 +24,8 @@ export default async function Image({
   const post = await getBlogPost(slug);
 
   const [interSemiBold, interRegular] = await Promise.all([
-    fetch(new URL('@/public/Inter-SemiBold.ttf', import.meta.url)).then((res) =>
-      res.arrayBuffer(),
-    ),
-    fetch(new URL('@/public/Inter-Regular.ttf', import.meta.url)).then((res) =>
-      res.arrayBuffer(),
-    ),
+    readFile(path.join(process.cwd(), 'public', 'Inter-SemiBold.ttf')),
+    readFile(path.join(process.cwd(), 'public', 'Inter-Regular.ttf')),
   ]);
 
   let imageSrc: string | null = null;
