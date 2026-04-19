@@ -8,6 +8,7 @@ export type FrontMatter = {
   title: string;
   date: Date | string;
   description: string;
+  image?: string;
 };
 
 export type BlogPost = {
@@ -31,13 +32,14 @@ export const getBlogPosts = cache(async (): Promise<BlogPost[]> => {
     if (!frontMatterTypeGuard(frontmatter)) {
       throw new Error(frontMatterError(slug));
     }
-    const { title, date, description } = frontmatter;
+    const { title, date, description, image } = frontmatter;
     return {
       slug,
       content,
       title,
       date: date.toString(),
       description,
+      image,
     };
   });
   return Promise.all(blogPostsPromises);
@@ -49,15 +51,16 @@ export const getBlogPost = cache(async (slug: string): Promise<BlogPost> => {
     'utf-8'
   );
   const { data: frontmatter, content } = matter(markdownWithMeta);
-  const { title, date, description } = frontmatter;
   if (!frontMatterTypeGuard(frontmatter)) {
     throw new Error(frontMatterError(slug));
   }
+  const { title, date, description, image } = frontmatter;
   return {
     slug,
     title,
     date: date.toString(),
     description,
+    image,
     content,
   };
 });

@@ -1,26 +1,55 @@
+'use client';
+
 import { BlogPost } from '@/utils/files';
 import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'motion/react';
 
-const BlogPreview = ({ post }: { post: BlogPost }) => {
-  const date = new Date(post.date);
-  const prettyDate = date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+const BlogPreview = ({
+  post,
+  priority = false,
+  index = 0,
+}: {
+  post: BlogPost;
+  priority?: boolean;
+  index?: number;
+}) => {
   return (
-    <div className="flex flex-col gap-y-1.5 w-full max-w-2xl">
-      <div className="flex flex-col md:flex-row items-baseline gap-y-1.5 md:items-center justify-between">
-        <Link
-          href={`/blog/${post.slug}`}
-          className="hover:underline text-slate-800 text-base font-normal"
-        >
-          {post.title}
-        </Link>
-        <label className="text-xs text-slate-500">{prettyDate}</label>
-      </div>
-      <p className="text-slate-600 text-sm">{post.description}</p>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 1.1,
+        delay: index * 0.15,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+    >
+      <Link
+        href={`/blog/${post.slug}`}
+        className="flex flex-col gap-y-3 w-full group"
+      >
+        {post.image && (
+          <div className="relative w-full aspect-[4/3] rounded-md overflow-hidden bg-gray-100">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              priority={priority}
+              className="object-cover transition-transform group-hover:scale-105"
+            />
+          </div>
+        )}
+        <div className="flex flex-col gap-y-1">
+          <span className="text-gray-900 text-base font-medium group-hover:underline">
+            {post.title}
+          </span>
+          <p className="text-gray-600 text-sm font-[380] tracking-[-0.003em] line-clamp-3">
+            {post.description}
+          </p>
+        </div>
+      </Link>
+    </motion.div>
   );
 };
 

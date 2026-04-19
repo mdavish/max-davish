@@ -1,29 +1,23 @@
-import { Suspense } from 'react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import { notFound } from 'next/navigation';
 import { stringTypeGuard } from '@/utils/typeguards';
-import { type BlogPost, getBlogPosts, getBlogPost } from '@/utils/files';
+import { getBlogPosts, getBlogPost } from '@/utils/files';
 import Link from 'next/link';
-import classNames from 'classnames';
+import Image from 'next/image';
 
 export const generateStaticParams = async () => {
   const posts = await getBlogPosts();
-  const paths = posts.map((post) => ({
-    params: { slug: post.slug },
-  }));
-
-  return paths;
+  return posts.map((post) => ({ slug: post.slug }));
 };
 
 export const generateMetadata = async ({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) => {
-  const slug = params.slug;
+  const { slug } = await params;
   if (!stringTypeGuard(slug)) {
-    return {
-      notFound: true,
-    };
+    notFound();
   }
   const post = await getBlogPost(slug);
   return {
@@ -35,13 +29,11 @@ export const generateMetadata = async ({
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const slug = params.slug;
+  const { slug } = await params;
   if (!stringTypeGuard(slug)) {
-    return {
-      notFound: true,
-    };
+    notFound();
   }
   const post = await getBlogPost(slug);
   const date = new Date(post.date);
@@ -53,22 +45,27 @@ export default async function BlogPost({
   });
 
   return (
-    <div className="flex flex-col gap-4">
-      <Link className="text-sm" href="/">
+    <div className="flex flex-col w-full">
+      <Link className="text-sm text-gray-500" href="/">
         Home
       </Link>
-      <h1 className="text-3xl md:text-3xl font-medium">{post.title}</h1>
-      <div className="text-slate-500">{prettyDate}</div>
-      <div
-        className={classNames(
-          'prose  prose-blockquote:not-italic prose-blockquote:font-normal prose-blockquote:text-slate-700 prose-slate prose-base max-w-none prose-h1:font-bold print:pb-0',
-          'prose-h1:text-xl prose-h1:font-medium prose prose-h1:text-slate-900',
-          'prose-h2:text-lg prose-h2:font-medium prose-h2:text-slate-800',
-          'prose-h3:text-lg prose-h3:font-medium prose-h3:text-slate-700',
-          'prose-h4:text-base prose-h4:font-medium prose-h4:text-slate-600'
-        )}
-      >
-        {/* @ts-expect-error Async Server Component */}
+      <h1 className="mt-6 text-3xl font-medium tracking-tight text-gray-900">
+        {post.title}
+      </h1>
+      <div className="mt-2 text-sm text-gray-500">{prettyDate}</div>
+      {post.image && (
+        <div className="relative w-full aspect-video mt-6 rounded-lg overflow-hidden bg-gray-100">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 768px"
+            className="object-cover"
+            priority
+          />
+        </div>
+      )}
+      <div className="prose mt-8 print:pb-0">
         <MDXRemote source={post.content} />
       </div>
     </div>

@@ -11,5 +11,6 @@ export const filesTypeGuard = (value: any): value is string[] => {
 export const frontMatterTypeGuard = (value: any): value is FrontMatter => {
   return typeof value.title === 'string' 
     && typeof value.date === 'object' 
-    && typeof value.description === 'string';
+    && typeof value.description === 'string'
+    && (value.image === undefined || typeof value.image === 'string');
 }

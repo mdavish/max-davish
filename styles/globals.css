@@ -1,7 +1,193 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@source '../app';
+@source '../components';
+@source '../content';
+
+/* ---------- Custom neutral palette ----------
+   Cool blue-gray — hue 250 (blue with a hint of violet). Chroma is intentionally
+   higher than "barely-there" so the spaceship/editorial feel actually registers.
+   Overrides Tailwind's default `gray-*` scale. */
+@theme {
+  --color-gray-50: oklch(0.984 0.005 250);
+  --color-gray-100: oklch(0.968 0.012 250);
+  --color-gray-200: oklch(0.929 0.02 250);
+  --color-gray-300: oklch(0.869 0.03 250);
+  --color-gray-400: oklch(0.704 0.04 250);
+  --color-gray-500: oklch(0.554 0.046 250);
+  --color-gray-600: oklch(0.446 0.044 250);
+  --color-gray-700: oklch(0.372 0.044 250);
+  --color-gray-800: oklch(0.279 0.04 250);
+  --color-gray-900: oklch(0.208 0.038 250);
+  --color-gray-950: oklch(0.129 0.036 250);
+}
+
+body {
+  background-color: oklch(0.99 0.006 250);
+  color: var(--color-gray-800);
+}
 
 a {
   @apply hover:underline;
+}
+
+/* ---------- Custom prose ---------- */
+/* Intentionally small, lightweight alternative to @tailwindcss/typography. */
+
+.prose {
+  color: var(--color-gray-700);
+  font-size: 0.9375rem; /* 15px */
+  line-height: 1.7;
+  font-weight: 380; /* relies on Inter variable; falls back to 400 */
+  letter-spacing: -0.003em;
+}
+
+.prose > * + * {
+  margin-top: 1em;
+}
+
+.prose p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: var(--color-gray-900);
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--color-gray-400);
+}
+.prose a:hover {
+  text-decoration-color: currentColor;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--color-gray-900);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+}
+
+.prose h1 {
+  font-size: 1.5rem;
+  letter-spacing: -0.025em;
+}
+.prose h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-gray-800);
+}
+.prose h3 {
+  font-size: 1.0625rem;
+  color: var(--color-gray-800);
+}
+.prose h4 {
+  font-size: 0.9375rem;
+  color: var(--color-gray-700);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+.prose ul {
+  list-style: disc;
+}
+.prose ol {
+  list-style: decimal;
+}
+.prose li {
+  margin-top: 0.375em;
+  margin-bottom: 0.375em;
+  padding-left: 0.25em;
+}
+.prose li::marker {
+  color: var(--color-gray-400);
+}
+.prose li > p {
+  margin: 0.25em 0;
+}
+.prose li > ul,
+.prose li > ol {
+  margin: 0.25em 0;
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--color-gray-200);
+  padding-left: 1em;
+  margin: 1.5em 0;
+  color: var(--color-gray-600);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.prose code {
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
+  padding: 0.1em 0.35em;
+  border-radius: 0.25em;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+.prose pre {
+  background: var(--color-gray-900);
+  color: var(--color-gray-100);
+  padding: 1em 1.25em;
+  border-radius: 0.5em;
+  overflow-x: auto;
+  font-size: 0.85em;
+  line-height: 1.6;
+  margin: 1.5em 0;
+}
+.prose pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-weight: 400;
+  font-size: inherit;
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--color-gray-200);
+  margin: 2.5em 0;
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  margin: 1.75em 0;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  margin: 1.5em 0;
+}
+.prose th,
+.prose td {
+  border-bottom: 1px solid var(--color-gray-200);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+.prose th {
+  font-weight: 500;
+  color: var(--color-gray-900);
 }
