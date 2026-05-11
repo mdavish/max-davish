@@ -4,6 +4,9 @@ const withMDX = require('@next/mdx')()
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  experimental: {
+    viewTransition: true,
+  },
 }
 
 module.exports = withMDX(nextConfig)

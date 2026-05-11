@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ViewTransition } from 'react';
 import cn from 'classnames';
 import { Inter } from 'next/font/google';
 import '../styles/globals.css';
@@ -15,7 +15,7 @@ const Layout = (props: { children: React.ReactNode }): React.JSX.Element => {
         >
           <Analytics />
           <div className="z-20 h-fit mx-auto my-14 md:my-20 print:mt-4 lg:my-20 xl:my-24 flex flex-col gap-y-4 print:w-full w-full max-w-4xl py-10 px-8 md:px-12">
-            {props.children}
+            <ViewTransition>{props.children}</ViewTransition>
           </div>
         </main>
       </body>
